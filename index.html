@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>For My BIVI 🤍</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+html,body{
+  height:100%;
+  font-family:'Poppins',sans-serif;
+  overflow:hidden;
+  background:#1e1a2f;
+}
+
+.swiper{
+  height:100vh;
+  overflow-y:scroll;
+  scroll-snap-type:y mandatory;
+  -webkit-overflow-scrolling:touch;
+}
+
+section{
+  height:100vh;
+  scroll-snap-align:start;
+  padding:48px 26px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+section::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  backdrop-filter:blur(2px);
+  z-index:0;
+}
+section > *{position:relative;z-index:1}
+
+h1,h2{
+  font-family:'Playfair Display',serif;
+  color:#f2eaff;
+}
+
+p{
+  font-size:1.1rem;
+  line-height:1.9;
+  color:#d9cfff;
+  max-width:560px;
+}
+
+/* night gradients */
+.bg1{background:linear-gradient(135deg,#2a2340,#3d325e)}
+.bg2{background:linear-gradient(135deg,#31285a,#4b3d7d)}
+.bg3{background:linear-gradient(135deg,#3d326a,#5a4d8f)}
+.bg4{background:linear-gradient(135deg,#251e3f,#3c2f63)}
+.bg5{background:linear-gradient(135deg,#2b214f,#423477)}
+
+/* floating spark particles */
+.spark{
+  position:fixed;
+  bottom:-20px;
+  font-size:16px;
+  animation:float 8s linear infinite;
+  pointer-events:none;
+}
+@keyframes float{
+  to{
+    transform:translateY(-120vh) translateX(40px);
+    opacity:0;
+  }
+}
+
+/* 🤍 BIG PROMISE ANIMATION */
+.promiseSeal{
+  font-size:72px;
+  animation:pulse 2.5s infinite;
+  filter:drop-shadow(0 0 20px rgba(255,255,255,.5));
+}
+
+@keyframes pulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.2)}
+  100%{transform:scale(1)}
+}
+
+/* 🫶 HOLDING HANDS CINEMATIC */
+.hands{
+  font-size:80px;
+  animation:hold 3.5s ease-in-out infinite;
+  filter:drop-shadow(0 10px 25px rgba(0,0,0,.4));
+}
+
+@keyframes hold{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-18px)}
+  100%{transform:translateY(0)}
+}
+
+/* dramatic glow moment */
+.bigMoment{
+  animation:bigMoment 4s ease-in-out infinite;
+}
+
+@keyframes bigMoment{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.15);filter:drop-shadow(0 0 40px #fff)}
+  100%{transform:scale(1)}
+}
+
+.btn{
+  margin-top:28px;
+  padding:14px 36px;
+  border-radius:40px;
+  border:none;
+  background:#a084ff;
+  color:white;
+  font-size:1.05rem;
+}
+
+/* music overlay */
+#musicOverlay{
+  position:fixed;
+  inset:0;
+  background:rgba(30,26,47,.97);
+  z-index:999;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+#musicOverlay button{
+  margin-top:18px;
+  padding:14px 30px;
+  border:none;
+  border-radius:30px;
+  background:#a084ff;
+  color:white;
+}
+</style>
+</head>
+
+<body>
+
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div id="musicOverlay">
+  <h2>For my BIVI 🤍</h2>
+  <p>Tap once… this is serious 💍</p>
+  <button onclick="startMusic()">Start</button>
+</div>
+
+<div class="swiper">
+
+<!-- PAGE 1 -->
+<section class="bg1">
+  <h1>Happy Promise Day 🤍</h1>
+  <p>For my BIVI… this isn’t just words.</p>
+</section>
+
+<!-- PAGE 2 -->
+<section class="bg2">
+  <h2>What Is a Promise?</h2>
+  <p>
+    Not a sentence.  
+    Not a message.  
+    But something you stand by.
+  </p>
+</section>
+
+<!-- PAGE 3 -->
+<section class="bg3">
+  <h2>Iffu…</h2>
+  <p>
+    I don’t promise perfection.  
+    I promise effort.
+  </p>
+</section>
+
+<!-- PAGE 4 -->
+<section class="bg4">
+  <div class="hands">🫶</div>
+  <h2>Holding Your Hand</h2>
+  <p>
+    Through loud days.  
+    Through silent nights.
+  </p>
+</section>
+
+<!-- PAGE 5 -->
+<section class="bg5">
+  <h2>I Promise…</h2>
+  <p>
+    To choose you  
+    not once —  
+    but every day.
+  </p>
+</section>
+
+<!-- BIG MOMENT PAGE -->
+<section class="bg3">
+  <div class="promiseSeal bigMoment">💍</div>
+  <h2>This Is My Promise</h2>
+  <p>
+    Not temporary.  
+    Not conditional.  
+    But real.
+  </p>
+</section>
+
+<!-- PAGE 7 -->
+<section class="bg4">
+  <h2>For My BIVI 🤍</h2>
+  <p>
+    I promise respect.  
+    I promise loyalty.  
+    I promise presence.
+  </p>
+</section>
+
+<!-- PAGE 8 -->
+<section class="bg2">
+  <h2>Seal It 💍</h2>
+  <button class="btn" onclick="seal()">Seal Promise</button>
+</section>
+
+<!-- PAGE 9 -->
+<section class="bg5">
+  <div class="hands">🤝</div>
+  <h2>Together</h2>
+  <p>
+    Two hearts.  
+    One direction.
+  </p>
+</section>
+
+<!-- PAGE 10 -->
+<section class="bg1">
+  <h1>🤍 Always You 🤍</h1>
+  <p>
+    Happy Promise Day, Iffu.  
+    Forever my BIVI.
+  </p>
+</section>
+
+</div>
+
+<script>
+function startMusic(){
+  document.getElementById("bgMusic").play().then(()=>{
+    document.getElementById("musicOverlay").style.display="none";
+  });
+}
+
+/* floating spark particles */
+setInterval(()=>{
+  const s=document.createElement("div");
+  s.className="spark";
+  s.innerText="✨";
+  s.style.left=Math.random()*100+"vw";
+  document.body.appendChild(s);
+  setTimeout(()=>s.remove(),8000);
+},900);
+
+/* seal animation */
+function seal(){
+  alert("💍 Promise sealed forever 🤍");
+}
+
+/* Easter egg */
+let taps=0;
+document.body.addEventListener("click",()=>{
+  taps++;
+  if(taps===28){
+    alert("🤍 I mean every promise I make to you, my BIVI 🤍");
+  }
+});
+</script>
+
+</body>
+</html>
