@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For My BIVI 🤍</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-
 html,body{
   height:100%;
   font-family:'Poppins',sans-serif;
   overflow:hidden;
-  background:#1e1a2f;
+  background:#120f1f;
+  color:#e9e3ff;
 }
 
 .swiper{
@@ -27,123 +27,126 @@ html,body{
 section{
   height:100vh;
   scroll-snap-align:start;
-  padding:48px 26px;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   text-align:center;
+  padding:40px;
   position:relative;
-  overflow:hidden;
 }
-
-section::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  backdrop-filter:blur(2px);
-  z-index:0;
-}
-section > *{position:relative;z-index:1}
 
 h1,h2{
   font-family:'Playfair Display',serif;
-  color:#f2eaff;
+  margin-bottom:16px;
 }
 
 p{
-  font-size:1.1rem;
-  line-height:1.9;
-  color:#d9cfff;
-  max-width:560px;
+  max-width:550px;
+  line-height:1.8;
+  opacity:.9;
 }
 
-/* night gradients */
-.bg1{background:linear-gradient(135deg,#2a2340,#3d325e)}
-.bg2{background:linear-gradient(135deg,#31285a,#4b3d7d)}
-.bg3{background:linear-gradient(135deg,#3d326a,#5a4d8f)}
-.bg4{background:linear-gradient(135deg,#251e3f,#3c2f63)}
-.bg5{background:linear-gradient(135deg,#2b214f,#423477)}
+/* gradients */
+.bg1{background:linear-gradient(135deg,#1b1633,#2c2450)}
+.bg2{background:linear-gradient(135deg,#241d44,#3c316b)}
+.bg3{background:linear-gradient(135deg,#2c2355,#4e4185)}
 
-/* floating spark particles */
-.spark{
+/* REAL SVG HAND CONTAINER */
+.hands-container{
+  position:relative;
+  width:300px;
+  height:150px;
+  margin-bottom:20px;
+}
+
+.hand{
+  position:absolute;
+  width:150px;
+  fill:#f2e9ff;
+}
+
+.left-hand{
+  left:-160px;
+  animation:slideLeft 3s forwards ease-in-out;
+}
+
+.right-hand{
+  right:-160px;
+  animation:slideRight 3s forwards ease-in-out;
+}
+
+@keyframes slideLeft{
+  to{left:30px;}
+}
+
+@keyframes slideRight{
+  to{right:30px;}
+}
+
+/* squeeze pulse after joining */
+.hands-container.joined{
+  animation:squeeze 2s infinite;
+}
+
+@keyframes squeeze{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.05)}
+  100%{transform:scale(1)}
+}
+
+/* ring glow */
+.ring{
+  font-size:70px;
+  margin-top:20px;
+  animation:ringGlow 3s infinite;
+}
+@keyframes ringGlow{
+  0%{filter:drop-shadow(0 0 10px #fff)}
+  50%{filter:drop-shadow(0 0 40px #fff)}
+  100%{filter:drop-shadow(0 0 10px #fff)}
+}
+
+/* stars */
+.star{
   position:fixed;
   bottom:-20px;
-  font-size:16px;
+  font-size:14px;
   animation:float 8s linear infinite;
   pointer-events:none;
 }
 @keyframes float{
-  to{
-    transform:translateY(-120vh) translateX(40px);
-    opacity:0;
-  }
+  to{transform:translateY(-120vh);opacity:0}
 }
 
-/* 🤍 BIG PROMISE ANIMATION */
-.promiseSeal{
-  font-size:72px;
-  animation:pulse 2.5s infinite;
-  filter:drop-shadow(0 0 20px rgba(255,255,255,.5));
-}
-
-@keyframes pulse{
-  0%{transform:scale(1)}
-  50%{transform:scale(1.2)}
-  100%{transform:scale(1)}
-}
-
-/* 🫶 HOLDING HANDS CINEMATIC */
-.hands{
-  font-size:80px;
-  animation:hold 3.5s ease-in-out infinite;
-  filter:drop-shadow(0 10px 25px rgba(0,0,0,.4));
-}
-
-@keyframes hold{
-  0%{transform:translateY(0)}
-  50%{transform:translateY(-18px)}
-  100%{transform:translateY(0)}
-}
-
-/* dramatic glow moment */
-.bigMoment{
-  animation:bigMoment 4s ease-in-out infinite;
-}
-
-@keyframes bigMoment{
-  0%{transform:scale(1)}
-  50%{transform:scale(1.15);filter:drop-shadow(0 0 40px #fff)}
-  100%{transform:scale(1)}
-}
-
+/* buttons */
 .btn{
-  margin-top:28px;
-  padding:14px 36px;
-  border-radius:40px;
+  margin-top:20px;
+  padding:12px 28px;
   border:none;
-  background:#a084ff;
+  border-radius:30px;
+  background:#9f87ff;
   color:white;
-  font-size:1.05rem;
+  font-size:1rem;
 }
 
 /* music overlay */
 #musicOverlay{
   position:fixed;
   inset:0;
-  background:rgba(30,26,47,.97);
-  z-index:999;
+  background:#120f1f;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
+  z-index:999;
 }
 #musicOverlay button{
-  margin-top:18px;
-  padding:14px 30px;
-  border:none;
+  margin-top:15px;
+  padding:12px 24px;
   border-radius:30px;
-  background:#a084ff;
+  border:none;
+  background:#9f87ff;
   color:white;
 }
 </style>
@@ -157,101 +160,51 @@ p{
 
 <div id="musicOverlay">
   <h2>For my BIVI 🤍</h2>
-  <p>Tap once… this is serious 💍</p>
+  <p>This promise is real…</p>
   <button onclick="startMusic()">Start</button>
 </div>
 
 <div class="swiper">
 
-<!-- PAGE 1 -->
 <section class="bg1">
   <h1>Happy Promise Day 🤍</h1>
-  <p>For my BIVI… this isn’t just words.</p>
+  <p>Iffu… this isn’t temporary.</p>
 </section>
 
-<!-- PAGE 2 -->
 <section class="bg2">
-  <h2>What Is a Promise?</h2>
-  <p>
-    Not a sentence.  
-    Not a message.  
-    But something you stand by.
-  </p>
-</section>
+  <div class="hands-container" id="handsBox">
+    
+    <!-- LEFT HAND SVG -->
+    <svg class="hand left-hand" viewBox="0 0 100 100">
+      <path d="M20 50 Q40 10 60 50 Q40 70 20 50 Z"/>
+    </svg>
 
-<!-- PAGE 3 -->
-<section class="bg3">
-  <h2>Iffu…</h2>
-  <p>
-    I don’t promise perfection.  
-    I promise effort.
-  </p>
-</section>
+    <!-- RIGHT HAND SVG -->
+    <svg class="hand right-hand" viewBox="0 0 100 100">
+      <path d="M80 50 Q60 10 40 50 Q60 70 80 50 Z"/>
+    </svg>
 
-<!-- PAGE 4 -->
-<section class="bg4">
-  <div class="hands">🫶</div>
+  </div>
+
   <h2>Holding Your Hand</h2>
-  <p>
-    Through loud days.  
-    Through silent nights.
-  </p>
+  <p>Not just now. Always.</p>
 </section>
 
-<!-- PAGE 5 -->
-<section class="bg5">
-  <h2>I Promise…</h2>
-  <p>
-    To choose you  
-    not once —  
-    but every day.
-  </p>
-</section>
-
-<!-- BIG MOMENT PAGE -->
 <section class="bg3">
-  <div class="promiseSeal bigMoment">💍</div>
+  <div class="ring">💍</div>
   <h2>This Is My Promise</h2>
-  <p>
-    Not temporary.  
-    Not conditional.  
-    But real.
-  </p>
+  <p>Intentional. Serious. Forever.</p>
 </section>
 
-<!-- PAGE 7 -->
-<section class="bg4">
-  <h2>For My BIVI 🤍</h2>
-  <p>
-    I promise respect.  
-    I promise loyalty.  
-    I promise presence.
-  </p>
-</section>
-
-<!-- PAGE 8 -->
-<section class="bg2">
-  <h2>Seal It 💍</h2>
-  <button class="btn" onclick="seal()">Seal Promise</button>
-</section>
-
-<!-- PAGE 9 -->
-<section class="bg5">
-  <div class="hands">🤝</div>
-  <h2>Together</h2>
-  <p>
-    Two hearts.  
-    One direction.
-  </p>
-</section>
-
-<!-- PAGE 10 -->
 <section class="bg1">
-  <h1>🤍 Always You 🤍</h1>
-  <p>
-    Happy Promise Day, Iffu.  
-    Forever my BIVI.
-  </p>
+  <h2>Secret Unlock 🔐</h2>
+  <input id="unlock" placeholder="type forever"
+    style="padding:10px;border-radius:10px;border:none">
+  <button class="btn" onclick="unlockPromise()">Unlock</button>
+</section>
+
+<section class="bg2">
+  <h1>🤍 Forever, My BIVI 🤍</h1>
 </section>
 
 </div>
@@ -263,28 +216,36 @@ function startMusic(){
   });
 }
 
-/* floating spark particles */
+/* stars */
 setInterval(()=>{
   const s=document.createElement("div");
-  s.className="spark";
+  s.className="star";
   s.innerText="✨";
   s.style.left=Math.random()*100+"vw";
   document.body.appendChild(s);
   setTimeout(()=>s.remove(),8000);
-},900);
+},800);
 
-/* seal animation */
-function seal(){
-  alert("💍 Promise sealed forever 🤍");
+/* mark joined after 3s */
+setTimeout(()=>{
+  document.getElementById("handsBox").classList.add("joined");
+},3000);
+
+function unlockPromise(){
+  const v=document.getElementById("unlock").value.toLowerCase();
+  if(v==="forever"){
+    alert("💍 You and me. No turning back.");
+  }else{
+    alert("Try again 🤍");
+  }
 }
 
-/* Easter egg */
+/* easter eggs */
 let taps=0;
 document.body.addEventListener("click",()=>{
   taps++;
-  if(taps===28){
-    alert("🤍 I mean every promise I make to you, my BIVI 🤍");
-  }
+  if(taps===20){alert("🤍 I’ll protect your heart.");}
+  if(taps===40){alert("🤍 Even on hard days, I choose you.");}
 });
 </script>
 
