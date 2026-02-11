@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>For My BIVI 🤍</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
@@ -11,12 +11,28 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{
   height:100%;
-  font-family:'Poppins',sans-serif;
   overflow:hidden;
-  background:#120f1f;
-  color:#e9e3ff;
+  font-family:'Poppins',sans-serif;
+  background:#100c1d;
+  color:#eee7ff;
 }
 
+/* HEARTBEAT BACKGROUND */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:radial-gradient(circle at center, rgba(160,132,255,.15), transparent 60%);
+  animation:heartbeat 3s infinite;
+  pointer-events:none;
+}
+@keyframes heartbeat{
+  0%{opacity:.2}
+  50%{opacity:.6}
+  100%{opacity:.2}
+}
+
+/* SWIPE */
 .swiper{
   height:100vh;
   overflow-y:scroll;
@@ -38,76 +54,23 @@ section{
 
 h1,h2{
   font-family:'Playfair Display',serif;
-  margin-bottom:16px;
+  margin-bottom:18px;
 }
 
 p{
-  max-width:550px;
+  max-width:600px;
   line-height:1.8;
   opacity:.9;
 }
 
-/* gradients */
-.bg1{background:linear-gradient(135deg,#1b1633,#2c2450)}
+/* GRADIENTS */
+.bg1{background:linear-gradient(135deg,#1a1530,#2e2552)}
 .bg2{background:linear-gradient(135deg,#241d44,#3c316b)}
-.bg3{background:linear-gradient(135deg,#2c2355,#4e4185)}
+.bg3{background:linear-gradient(135deg,#2b2255,#4e4185)}
+.bg4{background:linear-gradient(135deg,#1b1635,#32275f)}
+.bg5{background:linear-gradient(135deg,#231a40,#40326f)}
 
-/* REAL SVG HAND CONTAINER */
-.hands-container{
-  position:relative;
-  width:300px;
-  height:150px;
-  margin-bottom:20px;
-}
-
-.hand{
-  position:absolute;
-  width:150px;
-  fill:#f2e9ff;
-}
-
-.left-hand{
-  left:-160px;
-  animation:slideLeft 3s forwards ease-in-out;
-}
-
-.right-hand{
-  right:-160px;
-  animation:slideRight 3s forwards ease-in-out;
-}
-
-@keyframes slideLeft{
-  to{left:30px;}
-}
-
-@keyframes slideRight{
-  to{right:30px;}
-}
-
-/* squeeze pulse after joining */
-.hands-container.joined{
-  animation:squeeze 2s infinite;
-}
-
-@keyframes squeeze{
-  0%{transform:scale(1)}
-  50%{transform:scale(1.05)}
-  100%{transform:scale(1)}
-}
-
-/* ring glow */
-.ring{
-  font-size:70px;
-  margin-top:20px;
-  animation:ringGlow 3s infinite;
-}
-@keyframes ringGlow{
-  0%{filter:drop-shadow(0 0 10px #fff)}
-  50%{filter:drop-shadow(0 0 40px #fff)}
-  100%{filter:drop-shadow(0 0 10px #fff)}
-}
-
-/* stars */
+/* STARS */
 .star{
   position:fixed;
   bottom:-20px;
@@ -119,10 +82,69 @@ p{
   to{transform:translateY(-120vh);opacity:0}
 }
 
-/* buttons */
+/* REAL HANDS */
+.hands-container{
+  position:relative;
+  width:320px;
+  height:160px;
+  margin-bottom:20px;
+}
+
+.hand{
+  position:absolute;
+  width:150px;
+  fill:#f3edff;
+}
+
+.left-hand{left:-170px;animation:slideLeft 3s forwards}
+.right-hand{right:-170px;animation:slideRight 3s forwards}
+
+@keyframes slideLeft{to{left:40px}}
+@keyframes slideRight{to{right:40px}}
+
+.joined{animation:squeeze 2.5s infinite}
+@keyframes squeeze{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.06)}
+  100%{transform:scale(1)}
+}
+
+/* RING SLIDE */
+.ring-slide{
+  font-size:70px;
+  position:absolute;
+  top:65%;
+  left:-100px;
+  animation:ringSlide 4s forwards;
+}
+@keyframes ringSlide{
+  to{left:48%}
+}
+
+/* LOCK */
+.lock{
+  font-size:70px;
+  animation:lockPulse 2.5s infinite;
+}
+@keyframes lockPulse{
+  50%{transform:scale(1.2)}
+}
+
+/* PROMISE SEAL */
+.seal{
+  font-size:85px;
+  animation:sealGlow 3s infinite;
+}
+@keyframes sealGlow{
+  0%{filter:drop-shadow(0 0 10px #fff)}
+  50%{filter:drop-shadow(0 0 45px #fff)}
+  100%{filter:drop-shadow(0 0 10px #fff)}
+}
+
+/* BUTTON */
 .btn{
-  margin-top:20px;
-  padding:12px 28px;
+  margin-top:22px;
+  padding:12px 30px;
   border:none;
   border-radius:30px;
   background:#9f87ff;
@@ -130,11 +152,11 @@ p{
   font-size:1rem;
 }
 
-/* music overlay */
+/* MUSIC OVERLAY */
 #musicOverlay{
   position:fixed;
   inset:0;
-  background:#120f1f;
+  background:#100c1d;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -142,7 +164,7 @@ p{
   z-index:999;
 }
 #musicOverlay button{
-  margin-top:15px;
+  margin-top:18px;
   padding:12px 24px;
   border-radius:30px;
   border:none;
@@ -160,7 +182,7 @@ p{
 
 <div id="musicOverlay">
   <h2>For my BIVI 🤍</h2>
-  <p>This promise is real…</p>
+  <p>This promise is serious…</p>
   <button onclick="startMusic()">Start</button>
 </div>
 
@@ -173,37 +195,58 @@ p{
 
 <section class="bg2">
   <div class="hands-container" id="handsBox">
-    
-    <!-- LEFT HAND SVG -->
     <svg class="hand left-hand" viewBox="0 0 100 100">
       <path d="M20 50 Q40 10 60 50 Q40 70 20 50 Z"/>
     </svg>
-
-    <!-- RIGHT HAND SVG -->
     <svg class="hand right-hand" viewBox="0 0 100 100">
       <path d="M80 50 Q60 10 40 50 Q60 70 80 50 Z"/>
     </svg>
-
   </div>
-
   <h2>Holding Your Hand</h2>
-  <p>Not just now. Always.</p>
+  <p>Not just today. Always.</p>
 </section>
 
 <section class="bg3">
-  <div class="ring">💍</div>
-  <h2>This Is My Promise</h2>
-  <p>Intentional. Serious. Forever.</p>
+  <div class="ring-slide">💍</div>
+  <h2>Sliding Into Forever</h2>
 </section>
 
-<section class="bg1">
+<section class="bg4">
+  <div class="seal">🤍</div>
+  <h2>This Is My Promise</h2>
+  <p>Intentional. Loyal. Real.</p>
+</section>
+
+<section class="bg5">
+  <div class="lock">🔒</div>
+  <h2>Locked In</h2>
+</section>
+
+<section class="bg3">
+  <h2>Forever?</h2>
+  <button class="btn" onclick="forever()">Say Forever 🤍</button>
+</section>
+
+<section class="bg2">
+  <h2>Hindi Promise</h2>
+  <p>“साथ चलना है तो पूरी उम्र चलना,  
+  आधे रास्ते पर मुड़ना मत।”</p>
+</section>
+
+<section class="bg4">
+  <h2>Another One 🤍</h2>
+  <p>“मैं तुम्हारा हाथ तब भी पकड़ूँगा  
+  जब दुनिया छोड़ दे।”</p>
+</section>
+
+<section class="bg5">
   <h2>Secret Unlock 🔐</h2>
   <input id="unlock" placeholder="type forever"
     style="padding:10px;border-radius:10px;border:none">
   <button class="btn" onclick="unlockPromise()">Unlock</button>
 </section>
 
-<section class="bg2">
+<section class="bg1">
   <h1>🤍 Forever, My BIVI 🤍</h1>
 </section>
 
@@ -216,7 +259,11 @@ function startMusic(){
   });
 }
 
-/* stars */
+setTimeout(()=>{
+  document.getElementById("handsBox").classList.add("joined");
+},3000);
+
+/* STARS */
 setInterval(()=>{
   const s=document.createElement("div");
   s.className="star";
@@ -224,12 +271,11 @@ setInterval(()=>{
   s.style.left=Math.random()*100+"vw";
   document.body.appendChild(s);
   setTimeout(()=>s.remove(),8000);
-},800);
+},700);
 
-/* mark joined after 3s */
-setTimeout(()=>{
-  document.getElementById("handsBox").classList.add("joined");
-},3000);
+function forever(){
+  alert("🤍 Forever means forever, Iffu.");
+}
 
 function unlockPromise(){
   const v=document.getElementById("unlock").value.toLowerCase();
@@ -240,12 +286,13 @@ function unlockPromise(){
   }
 }
 
-/* easter eggs */
+/* MULTI LEVEL EASTER EGGS */
 let taps=0;
 document.body.addEventListener("click",()=>{
   taps++;
   if(taps===20){alert("🤍 I’ll protect your heart.");}
   if(taps===40){alert("🤍 Even on hard days, I choose you.");}
+  if(taps===60){alert("🤍 You’re my future, my BIVI.");}
 });
 </script>
 
