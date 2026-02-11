@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>For My BIVI 🤍</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+html,body{
+  height:100%;
+  font-family:'Poppins',sans-serif;
+  overflow:hidden;
+  background:#141022;
+}
+
+/* heartbeat background pulse */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:radial-gradient(circle at center, rgba(160,132,255,.15), transparent 60%);
+  animation:heartbeat 3s infinite;
+  pointer-events:none;
+}
+@keyframes heartbeat{
+  0%{opacity:.2}
+  50%{opacity:.6}
+  100%{opacity:.2}
+}
+
+.swiper{
+  height:100vh;
+  overflow-y:scroll;
+  scroll-snap-type:y mandatory;
+  -webkit-overflow-scrolling:touch;
+}
+
+section{
+  height:100vh;
+  scroll-snap-align:start;
+  padding:48px 26px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+}
+
+h1,h2{
+  font-family:'Playfair Display',serif;
+  color:#f1e9ff;
+}
+
+p{
+  font-size:1.1rem;
+  line-height:1.9;
+  color:#d9cfff;
+  max-width:560px;
+}
+
+/* gradients */
+.bg1{background:linear-gradient(135deg,#1c1633,#2c2350)}
+.bg2{background:linear-gradient(135deg,#231b44,#382d66)}
+.bg3{background:linear-gradient(135deg,#2c2355,#4a3d7d)}
+.bg4{background:linear-gradient(135deg,#1b1535,#31265c)}
+.bg5{background:linear-gradient(135deg,#211a40,#3a2f6a)}
+
+/* spark stars */
+.spark{
+  position:fixed;
+  bottom:-20px;
+  font-size:14px;
+  animation:float 8s linear infinite;
+  pointer-events:none;
+}
+@keyframes float{
+  to{transform:translateY(-120vh);opacity:0}
+}
+
+/* HOLDING HANDS JOIN ANIMATION */
+.handsJoin{
+  font-size:90px;
+  animation:join 4s ease-in-out infinite;
+  filter:drop-shadow(0 10px 40px rgba(255,255,255,.4));
+}
+@keyframes join{
+  0%{transform:scale(.9)}
+  50%{transform:scale(1.2)}
+  100%{transform:scale(.9)}
+}
+
+/* promise ring */
+.ring{
+  font-size:80px;
+  animation:ringGlow 3s infinite;
+}
+@keyframes ringGlow{
+  0%{filter:drop-shadow(0 0 10px #fff)}
+  50%{filter:drop-shadow(0 0 40px #fff)}
+  100%{filter:drop-shadow(0 0 10px #fff)}
+}
+
+/* lock animation */
+.lock{
+  font-size:70px;
+  animation:lockPulse 2.5s infinite;
+}
+@keyframes lockPulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.15)}
+  100%{transform:scale(1)}
+}
+
+.btn{
+  margin-top:28px;
+  padding:14px 36px;
+  border-radius:40px;
+  border:none;
+  background:#a084ff;
+  color:white;
+  font-size:1.05rem;
+}
+
+/* music overlay */
+#musicOverlay{
+  position:fixed;
+  inset:0;
+  background:#141022;
+  z-index:999;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+#musicOverlay button{
+  margin-top:18px;
+  padding:14px 30px;
+  border:none;
+  border-radius:30px;
+  background:#a084ff;
+  color:white;
+}
+</style>
+</head>
+
+<body>
+
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div id="musicOverlay">
+  <h2>For my BIVI 🤍</h2>
+  <p>This one is serious…</p>
+  <button onclick="startMusic()">Start</button>
+</div>
+
+<div class="swiper">
+
+<section class="bg1">
+  <h1>Happy Promise Day 🤍</h1>
+  <p>For my BIVI… this isn’t casual.</p>
+</section>
+
+<section class="bg2">
+  <h2>Iffu…</h2>
+  <p>I don’t promise perfection.<br>I promise effort.</p>
+</section>
+
+<section class="bg3">
+  <div class="handsJoin">🫶</div>
+  <h2>Holding Your Hand</h2>
+  <p>Through everything.</p>
+</section>
+
+<section class="bg4">
+  <h2>I Promise</h2>
+  <p>Respect. Loyalty. Presence.</p>
+</section>
+
+<section class="bg5">
+  <div class="ring">💍</div>
+  <h2>Not Temporary</h2>
+  <p>Not conditional. Not convenient.</p>
+</section>
+
+<section class="bg3">
+  <h2>Forever?</h2>
+  <button class="btn" onclick="forever()">Say Forever 🤍</button>
+</section>
+
+<section class="bg2">
+  <div class="lock">🔒</div>
+  <h2>Locked In</h2>
+  <p>This promise is sealed.</p>
+</section>
+
+<section class="bg4">
+  <h2>Through Loud Days</h2>
+  <p>Through silent nights.</p>
+</section>
+
+<section class="bg5">
+  <h2>For My BIVI</h2>
+  <p>I choose you. Every day.</p>
+</section>
+
+<section class="bg3">
+  <h1>🤍 Always You 🤍</h1>
+  <p>Happy Promise Day, Iffu.</p>
+</section>
+
+<!-- EXTRA NEW PAGES -->
+
+<section class="bg2">
+  <h2>No Matter What</h2>
+  <p>I won’t disappear when it’s hard.</p>
+</section>
+
+<section class="bg4">
+  <h2>When You Doubt</h2>
+  <p>I’ll remind you how strong you are.</p>
+</section>
+
+<section class="bg5">
+  <div class="handsJoin">🤝</div>
+  <h2>Side By Side</h2>
+  <p>Not ahead. Not behind.</p>
+</section>
+
+<section class="bg3">
+  <h2>My Promise Seal</h2>
+  <div class="ring">💎</div>
+  <p>This is intentional.</p>
+</section>
+
+<section class="bg1">
+  <h1>Forever, My BIVI 🤍</h1>
+</section>
+
+</div>
+
+<script>
+function startMusic(){
+  document.getElementById("bgMusic").play().then(()=>{
+    document.getElementById("musicOverlay").style.display="none";
+  });
+}
+
+setInterval(()=>{
+  const s=document.createElement("div");
+  s.className="spark";
+  s.innerText="✨";
+  s.style.left=Math.random()*100+"vw";
+  document.body.appendChild(s);
+  setTimeout(()=>s.remove(),8000);
+},800);
+
+function forever(){
+  alert("🤍 Forever means forever. I’m serious about you, Iffu.");
+}
+
+/* Easter Eggs */
+let taps=0;
+document.body.addEventListener("click",()=>{
+  taps++;
+  if(taps===20){
+    alert("🤍 I’ll protect your heart.");
+  }
+  if(taps===35){
+    alert("🤍 I choose you even on bad days.");
+  }
+  if(taps===50){
+    alert("🤍 You’re my future, my BIVI.");
+  }
+});
+</script>
+
+</body>
+</html>
